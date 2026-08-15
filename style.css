@@ -14,12 +14,12 @@ body {
   background:
     radial-gradient(
       circle at 15% 10%,
-      rgba(94, 70, 190, .22),
+      rgba(94,70,190,.22),
       transparent 30%
     ),
     radial-gradient(
       circle at 90% 90%,
-      rgba(45, 92, 190, .18),
+      rgba(45,92,190,.18),
       transparent 32%
     ),
     #070914;
@@ -32,16 +32,15 @@ body {
     "Segoe UI",
     Arial,
     sans-serif;
-
-  overflow-x: hidden;
 }
 
 
-/* LOCK */
+/* ================= LOCK ================= */
 
 #lockScreen {
   position: fixed;
   inset: 0;
+
   z-index: 9999;
 
   display: flex;
@@ -67,7 +66,7 @@ body {
 
   text-align: center;
 
-  background: rgba(18,22,38,.95);
+  background: rgba(18,22,38,.96);
 
   border: 1px solid #30364d;
 
@@ -101,8 +100,11 @@ body {
 
 .eyebrow {
   color: #929ab3;
+
   font-size: 11px;
+
   font-weight: 800;
+
   letter-spacing: 3px;
 }
 
@@ -110,6 +112,7 @@ body {
   margin-top: 14px;
 
   font-size: 48px;
+
   line-height: .9;
 
   letter-spacing: -3px;
@@ -119,11 +122,13 @@ body {
 
 .lockCard h1 span {
   display: block;
+
   color: #8171ff;
 }
 
 .lockText {
   margin: 24px 0;
+
   color: #81899f;
 }
 
@@ -134,11 +139,13 @@ body {
   padding: 0 17px;
 
   border: 1px solid #353c54;
+
   border-radius: 15px;
 
   outline: none;
 
   background: #090c15;
+
   color: white;
 
   font-size: 16px;
@@ -153,6 +160,7 @@ body {
   margin-top: 12px;
 
   border: none;
+
   border-radius: 15px;
 
   background:
@@ -172,6 +180,7 @@ body {
 #passwordError,
 #expenseError {
   min-height: 18px;
+
   margin-top: 10px;
 
   color: #ff7182;
@@ -180,12 +189,13 @@ body {
 }
 
 
-/* APP */
+/* ================= APP ================= */
 
 #app {
   display: none;
 
   width: 100%;
+
   max-width: 1120px;
 
   margin: auto;
@@ -194,13 +204,15 @@ body {
 }
 
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero {
   min-height: 270px;
 
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 }
 
@@ -216,17 +228,20 @@ body {
 
 .mainTitle span {
   display: block;
+
   color: #8171ff;
 }
 
 .subtitle {
   margin-top: 22px;
+
   color: #858da5;
+
   font-size: 18px;
 }
 
 
-/* ROBOT */
+/* ================= ROBOT ================= */
 
 .robot {
   position: relative;
@@ -366,7 +381,9 @@ body {
   margin: auto;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   border-radius: 12px;
@@ -407,16 +424,18 @@ body {
 
 .leftArm {
   left: 42px;
+
   transform: rotate(24deg);
 }
 
 .rightArm {
   right: 42px;
+
   transform: rotate(-24deg);
 }
 
 
-/* BALANCE */
+/* ================= BALANCE ================= */
 
 .balanceCard {
   position: relative;
@@ -441,6 +460,7 @@ body {
 
 .balanceHeader {
   display: flex;
+
   justify-content: space-between;
 }
 
@@ -450,6 +470,7 @@ body {
 
 .available {
   margin-top: 9px;
+
   color: #ffffffa8;
 }
 
@@ -471,7 +492,9 @@ body {
   height: 52px;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   border-radius: 16px;
@@ -491,6 +514,7 @@ body {
 
 .balanceDescription {
   margin-top: 9px;
+
   color: #ffffffa8;
 }
 
@@ -506,7 +530,7 @@ body {
 }
 
 
-/* SALARY */
+/* ================= SALARY ================= */
 
 .salaryCard {
   margin-top: 17px;
@@ -514,11 +538,13 @@ body {
   padding: 21px 26px;
 
   display: flex;
+
   align-items: center;
 
   gap: 17px;
 
   border: 1px solid #2d3449;
+
   border-radius: 25px;
 
   background: #121624;
@@ -529,7 +555,9 @@ body {
   height: 58px;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   border-radius: 18px;
@@ -545,6 +573,7 @@ body {
 
 .salaryDetails h2 {
   margin-top: 7px;
+
   font-size: 29px;
 }
 
@@ -552,6 +581,7 @@ body {
   padding: 14px 20px;
 
   border: none;
+
   border-radius: 14px;
 
   background: #292f46;
@@ -564,10 +594,11 @@ body {
 }
 
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
 
 .navigation {
   display: flex;
+
   gap: 10px;
 
   margin: 28px 0 30px;
@@ -577,6 +608,7 @@ body {
   padding: 12px 18px;
 
   border: 1px solid #30374c;
+
   border-radius: 13px;
 
   background: #121624;
@@ -598,7 +630,7 @@ body {
 }
 
 
-/* PAGES */
+/* ================= PAGES ================= */
 
 .page {
   display: none;
@@ -609,7 +641,7 @@ body {
 }
 
 
-/* DASHBOARD */
+/* ================= DASHBOARD ================= */
 
 .trackerPreview {
   margin-top: 10px;
@@ -619,6 +651,7 @@ body {
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
   margin-top: 7px;
@@ -632,6 +665,7 @@ body {
   padding: 13px 17px;
 
   border: none;
+
   border-radius: 13px;
 
   background:
@@ -649,12 +683,13 @@ body {
 }
 
 
-/* EXPENSE PAGE */
+/* ================= EXPENSE PAGE ================= */
 
 .expensePageHeader {
   display: flex;
 
   justify-content: space-between;
+
   align-items: flex-end;
 
   gap: 20px;
@@ -676,6 +711,7 @@ body {
   padding: 15px 20px;
 
   border: none;
+
   border-radius: 14px;
 
   background:
@@ -692,12 +728,8 @@ body {
   cursor: pointer;
 }
 
-.addExpenseButton span {
-  font-size: 20px;
-}
 
-
-/* FORM */
+/* ================= EXPENSE FORM ================= */
 
 .expenseForm {
   display: none;
@@ -707,6 +739,7 @@ body {
   padding: 24px;
 
   border: 1px solid #30374c;
+
   border-radius: 23px;
 
   background: #121624;
@@ -714,6 +747,7 @@ body {
 
 .expenseForm h3 {
   margin-top: 8px;
+
   margin-bottom: 18px;
 
   font-size: 24px;
@@ -721,6 +755,7 @@ body {
 
 .expenseForm input {
   width: 100%;
+
   height: 52px;
 
   margin-bottom: 11px;
@@ -728,6 +763,7 @@ body {
   padding: 0 15px;
 
   border: 1px solid #30374c;
+
   border-radius: 14px;
 
   outline: none;
@@ -739,12 +775,9 @@ body {
   font-size: 15px;
 }
 
-.expenseForm input:focus {
-  border-color: #7968ff;
-}
-
 .formButtons {
   display: flex;
+
   gap: 10px;
 }
 
@@ -754,6 +787,7 @@ body {
   height: 50px;
 
   border: none;
+
   border-radius: 13px;
 
   font-weight: 800;
@@ -763,6 +797,7 @@ body {
 
 .cancelButton {
   background: #292f43;
+
   color: #aab0c1;
 }
 
@@ -778,13 +813,14 @@ body {
 }
 
 
-/* EXPENSE CARDS */
+/* ================= EXPENSE CARDS ================= */
 
 #expenseList {
   margin-top: 18px;
 }
 
-.expenseCard {
+.expenseCard,
+.dashboardExpenseCard {
   display: flex;
 
   align-items: center;
@@ -800,14 +836,6 @@ body {
   border-radius: 21px;
 
   background: #121624;
-
-  transition: .2s;
-}
-
-.expenseCard:hover {
-  transform: translateY(-2px);
-
-  border-color: #464e6b;
 }
 
 .expenseIcon {
@@ -817,7 +845,9 @@ body {
   flex-shrink: 0;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   border-radius: 16px;
@@ -837,7 +867,9 @@ body {
   font-size: 17px;
 
   overflow: hidden;
+
   text-overflow: ellipsis;
+
   white-space: nowrap;
 }
 
@@ -861,9 +893,8 @@ body {
   width: 35px;
   height: 35px;
 
-  flex-shrink: 0;
-
   border: none;
+
   border-radius: 10px;
 
   background: #292033;
@@ -876,7 +907,7 @@ body {
 }
 
 
-/* EMPTY */
+/* ================= EMPTY ================= */
 
 .emptyExpense {
   margin-top: 17px;
@@ -894,46 +925,20 @@ body {
 
 .emptyIcon {
   font-size: 38px;
+
   margin-bottom: 10px;
 }
 
 .emptyExpense p {
   margin-top: 7px;
+
   color: #747d96;
 }
 
 
-/* DASHBOARD PREVIEW */
+/* ================= NOTES ================= */
 
-.dashboardExpenseCard {
-  margin-top: 15px;
-
-  padding: 18px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 15px;
-
-  border: 1px solid #292f42;
-  border-radius: 20px;
-
-  background: #121624;
-}
-
-.dashboardExpenseCard .expenseInfo {
-  flex: 1;
-}
-
-.dashboardExpenseCard .expenseMoney {
-  color: #ff7182;
-  font-weight: 800;
-}
-
-
-/* NOTES */
-
-.notesPreview {
+.notesSection {
   margin-top: 22px;
 
   padding: 24px;
@@ -945,58 +950,335 @@ body {
   background: #121624;
 }
 
-.notesPreview h2 {
+.notesSection h2 {
   margin-top: 7px;
+
   font-size: 26px;
 }
 
-.notesPlaceholder {
+#notesInput {
+  width: 100%;
+
+  min-height: 140px;
+
   margin-top: 15px;
 
-  padding: 18px;
+  padding: 16px;
 
-  border-radius: 14px;
+  resize: vertical;
+
+  border: 1px solid #30374c;
+
+  border-radius: 15px;
+
+  outline: none;
 
   background: #090c15;
 
-  color: #6f7891;
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 15px;
+}
+
+.notesBottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 12px;
+}
+
+#notesStatus {
+  color: #69728b;
+
+  font-size: 12px;
+}
+
+#saveNotes {
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #7968ff,
+      #4d9cff
+    );
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
 }
 
 
-/* STATS */
+/* ================= STATS ================= */
 
-.comingSoon {
-  padding: 70px 25px;
+.statsHeader h2 {
+  margin-top: 8px;
 
-  text-align: center;
+  font-size: 40px;
+}
 
-  border: 1px dashed #30374c;
+.statsHeader > p:last-child {
+  margin-top: 8px;
+
+  color: #858da5;
+}
+
+
+/* STAT CARDS */
+
+.statCards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 15px;
+
+  margin-top: 22px;
+}
+
+.statCard {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 22px;
+
+  border: 1px solid #292f42;
+
+  border-radius: 22px;
+
+  background: #121624;
+}
+
+.statIcon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 16px;
+
+  background: #23213f;
+
+  font-size: 23px;
+}
+
+.statCard p {
+  color: #777f96;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.statCard h3 {
+  margin-top: 5px;
+
+  font-size: 25px;
+}
+
+
+/* GRAPH */
+
+.graphCard {
+  margin-top: 18px;
+
+  padding: 25px;
+
+  border: 1px solid #292f42;
 
   border-radius: 25px;
 
   background: #121624;
 }
 
-.comingSoon > div {
-  font-size: 55px;
+.graphTitle {
+  display: flex;
 
-  margin-bottom: 15px;
+  justify-content: space-between;
+
+  align-items: center;
 }
 
-.comingSoon h2 {
-  margin-top: 8px;
+.graphTitle h3 {
+  margin-top: 7px;
 
-  font-size: 38px;
+  font-size: 24px;
 }
 
-.comingSoon p:last-child {
-  max-width: 500px;
+#graphTotal {
+  color: #9b8fff;
 
-  margin: 12px auto 0;
+  font-size: 20px;
 
-  color: #858da5;
+  font-weight: 800;
+}
 
-  line-height: 1.6;
+.chart {
+  position: relative;
+
+  height: 270px;
+
+  margin-top: 25px;
+
+  padding-top: 10px;
+}
+
+.chartGrid {
+  position: absolute;
+
+  inset: 10px 0 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.chartGrid span {
+  width: 100%;
+
+  height: 1px;
+
+  background: #252b3c;
+}
+
+.barChart {
+  position: absolute;
+
+  inset: 10px 0 35px;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: flex-end;
+
+  gap: 10px;
+
+  padding: 0 10px;
+}
+
+.barGroup {
+  height: 100%;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.bar {
+  width: min(38px,70%);
+
+  min-height: 3px;
+
+  border-radius: 9px 9px 4px 4px;
+
+  background:
+    linear-gradient(
+      to top,
+      #6252ec,
+      #62bfff
+    );
+
+  transition:
+    height .5s ease;
+}
+
+.barLabel {
+  color: #707992;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.barValue {
+  color: #a4abc0;
+
+  font-size: 9px;
+}
+
+
+/* TIPS */
+
+.tipsCard {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  margin-top: 18px;
+
+  padding: 22px;
+
+  border: 1px solid #39345e;
+
+  border-radius: 23px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(91,74,203,.20),
+      rgba(18,22,36,.8)
+    );
+}
+
+.tipsIcon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 17px;
+
+  background: #29234e;
+
+  font-size: 25px;
+}
+
+.tipsCard h3 {
+  margin-top: 7px;
+
+  color: #d9d6ff;
+
+  line-height: 1.45;
 }
 
 
@@ -1014,6 +1296,7 @@ body {
 
   .mainTitle {
     font-size: 48px;
+
     letter-spacing: -4px;
   }
 
@@ -1085,12 +1368,20 @@ body {
     flex-direction: column;
   }
 
-  .expenseCard {
-    padding: 14px;
+  .statCards {
+    grid-template-columns: 1fr;
   }
 
-  .expenseMoney {
-    font-size: 14px;
+  .notesBottom {
+    align-items: flex-start;
+
+    gap: 10px;
+
+    flex-direction: column;
+  }
+
+  #saveNotes {
+    width: 100%;
   }
 
 }
