@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Finance Manager</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= PASSWORD SCREEN ================= -->
+
+  <div id="lockScreen">
+
+    <div class="lockCard">
+
+      <div class="lockIcon">🔐</div>
+
+      <p class="eyebrow">PRIVATE FINANCE</p>
+
+      <h1>
+        FINANCE
+        <span>MANAGER</span>
+      </h1>
+
+      <p class="lockText">
+        Your money. Your control.
+      </p>
+
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="Enter password"
+        autocomplete="off"
+      >
+
+      <button id="unlockButton">
+        UNLOCK
+        <span>→</span>
+      </button>
+
+      <p id="passwordError"></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= MAIN APP ================= -->
+
+  <div id="app">
+
+    <!-- HEADER -->
+
+    <header class="hero">
+
+      <div class="heroText">
+
+        <p class="eyebrow">
+          WELCOME BACK
+        </p>
+
+        <h1 class="mainTitle">
+          FINANCE
+          <span>MANAGER</span>
+        </h1>
+
+        <p class="subtitle">
+          Take control of your money.
+        </p>
+
+      </div>
+
+
+      <!-- ROBOT -->
+
+      <div class="robot">
+
+        <div class="antenna"></div>
+
+        <div class="robotHead">
+
+          <div class="robotEye leftEye"></div>
+          <div class="robotEye rightEye"></div>
+
+          <div class="robotMouth"></div>
+
+        </div>
+
+        <div class="robotBody">
+
+          <div class="robotRupee">
+            ₹
+          </div>
+
+          <div class="robotLight"></div>
+
+        </div>
+
+        <div class="robotArm leftArm"></div>
+        <div class="robotArm rightArm"></div>
+
+      </div>
+
+    </header>
+
+
+    <!-- TOTAL BALANCE -->
+
+    <section class="balanceCard">
+
+      <div class="balanceHeader">
+
+        <div>
+
+          <p class="eyebrow whiteEyebrow">
+            TOTAL BALANCE
+          </p>
+
+          <p class="available">
+            <span></span>
+            Available
+          </p>
+
+        </div>
+
+        <div class="balanceIcon">
+          ₹
+        </div>
+
+      </div>
+
+      <h2 id="balanceAmount">
+        ₹0
+      </h2>
+
+      <p class="balanceDescription">
+        Your available money
+      </p>
+
+      <div class="cardArrow">
+        ↗
+      </div>
+
+    </section>
+
+
+    <!-- SALARY -->
+
+    <section class="salaryCard">
+
+      <div class="salaryIcon">
+        💼
+      </div>
+
+      <div class="salaryDetails">
+
+        <p class="eyebrow">
+          SALARY PER MONTH
+        </p>
+
+        <h2 id="salaryAmount">
+          ₹0
+        </h2>
+
+      </div>
+
+      <button id="salaryButton">
+        + ADD
+      </button>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="navigation">
+
+      <button class="navButton active">
+        🏠 Dashboard
+      </button>
+
+      <button class="navButton">
+        💸 Expenses
+      </button>
+
+      <button class="navButton">
+        📊 Stats
+      </button>
+
+    </nav>
+
+
+    <!-- MONEY TRACKER -->
+
+    <section class="trackerPreview">
+
+      <p class="eyebrow">
+        MONEY TRACKER
+      </p>
+
+      <div class="trackerHeading">
+
+        <h2>
+          Expenses
+        </h2>
+
+        <button class="addExpensePreview">
+          + ADD EXPENSE
+        </button>
+
+      </div>
+
+      <div class="emptyExpense">
+
+        <div class="emptyIcon">
+          💸
+        </div>
+
+        <h3>
+          No expenses yet
+        </h3>
+
+        <p>
+          Your expense tracker will appear here.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- NOTES PREVIEW -->
+
+    <section class="notesPreview">
+
+      <p class="eyebrow">
+        QUICK NOTES
+      </p>
+
+      <h2>
+        Your notes
+      </h2>
+
+      <div class="notesPlaceholder">
+        Notes will be available in Part 3.
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
