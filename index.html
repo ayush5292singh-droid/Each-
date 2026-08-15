@@ -3,247 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Finance Manager</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ================= PASSWORD SCREEN ================= -->
+<!-- LOCK SCREEN -->
+<div id="lockScreen">
+  <div class="lockCard">
 
-  <div id="lockScreen">
+    <div class="lockIcon">🔐</div>
 
-    <div class="lockCard">
+    <p class="eyebrow">PRIVATE FINANCE</p>
 
-      <div class="lockIcon">🔐</div>
+    <h1>
+      FINANCE
+      <span>MANAGER</span>
+    </h1>
 
-      <p class="eyebrow">PRIVATE FINANCE</p>
+    <p class="lockText">
+      Your money. Your control.
+    </p>
 
-      <h1>
+    <input
+      type="password"
+      id="passwordInput"
+      placeholder="Enter password"
+      autocomplete="off"
+    >
+
+    <button id="unlockButton">
+      UNLOCK <span>→</span>
+    </button>
+
+    <p id="passwordError"></p>
+
+  </div>
+</div>
+
+
+<!-- MAIN APP -->
+<div id="app">
+
+  <!-- HEADER -->
+  <header class="hero">
+
+    <div class="heroText">
+
+      <p class="eyebrow">WELCOME BACK</p>
+
+      <h1 class="mainTitle">
         FINANCE
         <span>MANAGER</span>
       </h1>
 
-      <p class="lockText">
-        Your money. Your control.
+      <p class="subtitle">
+        Take control of your money.
       </p>
-
-      <input
-        type="password"
-        id="passwordInput"
-        placeholder="Enter password"
-        autocomplete="off"
-      >
-
-      <button id="unlockButton">
-        UNLOCK
-        <span>→</span>
-      </button>
-
-      <p id="passwordError"></p>
 
     </div>
 
-  </div>
+
+    <!-- ROBOT -->
+    <div class="robot">
+
+      <div class="antenna"></div>
+
+      <div class="robotHead">
+        <div class="robotEye leftEye"></div>
+        <div class="robotEye rightEye"></div>
+        <div class="robotMouth"></div>
+      </div>
+
+      <div class="robotBody">
+
+        <div class="robotRupee">₹</div>
+
+        <div class="robotLight"></div>
+
+      </div>
+
+      <div class="robotArm leftArm"></div>
+      <div class="robotArm rightArm"></div>
+
+    </div>
+
+  </header>
 
 
-  <!-- ================= MAIN APP ================= -->
+  <!-- BALANCE -->
+  <section class="balanceCard">
 
-  <div id="app">
+    <div class="balanceHeader">
 
-    <!-- HEADER -->
+      <div>
 
-    <header class="hero">
-
-      <div class="heroText">
-
-        <p class="eyebrow">
-          WELCOME BACK
+        <p class="eyebrow whiteEyebrow">
+          TOTAL BALANCE
         </p>
 
-        <h1 class="mainTitle">
-          FINANCE
-          <span>MANAGER</span>
-        </h1>
-
-        <p class="subtitle">
-          Take control of your money.
+        <p class="available">
+          <span></span>
+          Available
         </p>
 
       </div>
 
+      <div class="balanceIcon">₹</div>
 
-      <!-- ROBOT -->
+    </div>
 
-      <div class="robot">
+    <h2 id="balanceAmount">₹0</h2>
 
-        <div class="antenna"></div>
+    <p class="balanceDescription">
+      Your available money
+    </p>
 
-        <div class="robotHead">
+    <div class="cardArrow">↗</div>
 
-          <div class="robotEye leftEye"></div>
-          <div class="robotEye rightEye"></div>
-
-          <div class="robotMouth"></div>
-
-        </div>
-
-        <div class="robotBody">
-
-          <div class="robotRupee">
-            ₹
-          </div>
-
-          <div class="robotLight"></div>
-
-        </div>
-
-        <div class="robotArm leftArm"></div>
-        <div class="robotArm rightArm"></div>
-
-      </div>
-
-    </header>
+  </section>
 
 
-    <!-- TOTAL BALANCE -->
+  <!-- SALARY -->
+  <section class="salaryCard">
 
-    <section class="balanceCard">
+    <div class="salaryIcon">💼</div>
 
-      <div class="balanceHeader">
+    <div class="salaryDetails">
 
-        <div>
-
-          <p class="eyebrow whiteEyebrow">
-            TOTAL BALANCE
-          </p>
-
-          <p class="available">
-            <span></span>
-            Available
-          </p>
-
-        </div>
-
-        <div class="balanceIcon">
-          ₹
-        </div>
-
-      </div>
-
-      <h2 id="balanceAmount">
-        ₹0
-      </h2>
-
-      <p class="balanceDescription">
-        Your available money
+      <p class="eyebrow">
+        SALARY PER MONTH
       </p>
 
-      <div class="cardArrow">
-        ↗
-      </div>
+      <h2 id="salaryAmount">₹0</h2>
 
-    </section>
+    </div>
 
+    <button id="salaryButton">+ ADD</button>
 
-    <!-- SALARY -->
-
-    <section class="salaryCard">
-
-      <div class="salaryIcon">
-        💼
-      </div>
-
-      <div class="salaryDetails">
-
-        <p class="eyebrow">
-          SALARY PER MONTH
-        </p>
-
-        <h2 id="salaryAmount">
-          ₹0
-        </h2>
-
-      </div>
-
-      <button id="salaryButton">
-        + ADD
-      </button>
-
-    </section>
+  </section>
 
 
-    <!-- NAVIGATION -->
+  <!-- NAVIGATION -->
+  <nav class="navigation">
 
-    <nav class="navigation">
+    <button class="navButton active" data-page="dashboard">
+      🏠 Dashboard
+    </button>
 
-      <button class="navButton active">
-        🏠 Dashboard
-      </button>
+    <button class="navButton" data-page="expenses">
+      💸 Expenses
+    </button>
 
-      <button class="navButton">
-        💸 Expenses
-      </button>
+    <button class="navButton" data-page="stats">
+      📊 Stats
+    </button>
 
-      <button class="navButton">
-        📊 Stats
-      </button>
-
-    </nav>
+  </nav>
 
 
-    <!-- MONEY TRACKER -->
+  <!-- ================= DASHBOARD ================= -->
+
+  <main id="dashboardPage" class="page activePage">
 
     <section class="trackerPreview">
 
-      <p class="eyebrow">
-        MONEY TRACKER
-      </p>
+      <p class="eyebrow">MONEY TRACKER</p>
 
       <div class="trackerHeading">
 
-        <h2>
-          Expenses
-        </h2>
+        <h2>Expenses</h2>
 
-        <button class="addExpensePreview">
+        <button
+          class="addExpensePreview"
+          id="dashboardAddExpense"
+        >
           + ADD EXPENSE
         </button>
 
       </div>
 
-      <div class="emptyExpense">
-
-        <div class="emptyIcon">
-          💸
-        </div>
-
-        <h3>
-          No expenses yet
-        </h3>
-
-        <p>
-          Your expense tracker will appear here.
-        </p>
-
-      </div>
+      <div id="dashboardExpensePreview"></div>
 
     </section>
 
 
-    <!-- NOTES PREVIEW -->
-
     <section class="notesPreview">
 
-      <p class="eyebrow">
-        QUICK NOTES
-      </p>
+      <p class="eyebrow">QUICK NOTES</p>
 
-      <h2>
-        Your notes
-      </h2>
+      <h2>Your notes</h2>
 
       <div class="notesPlaceholder">
         Notes will be available in Part 3.
@@ -251,10 +201,118 @@
 
     </section>
 
-  </div>
+  </main>
 
 
-  <script src="script.js"></script>
+  <!-- ================= EXPENSES ================= -->
+
+  <main id="expensesPage" class="page">
+
+    <section class="expensePageHeader">
+
+      <div>
+
+        <p class="eyebrow">MONEY TRACKER</p>
+
+        <h2>Expenses</h2>
+
+        <p class="pageDescription">
+          Track where your money goes.
+        </p>
+
+      </div>
+
+      <button
+        id="addExpenseButton"
+        class="addExpenseButton"
+      >
+        <span>+</span>
+        ADD EXPENSE
+      </button>
+
+    </section>
+
+
+    <!-- EXPENSE FORM -->
+
+    <section
+      id="expenseForm"
+      class="expenseForm"
+    >
+
+      <p class="eyebrow">NEW TRANSACTION</p>
+
+      <h3>Add an expense</h3>
+
+      <input
+        id="expenseTitle"
+        type="text"
+        placeholder="Expense title e.g. Food"
+        maxlength="40"
+      >
+
+      <input
+        id="expenseAmount"
+        type="number"
+        placeholder="Amount spent"
+        min="1"
+      >
+
+      <div class="formButtons">
+
+        <button
+          id="cancelExpense"
+          class="cancelButton"
+        >
+          CANCEL
+        </button>
+
+        <button
+          id="saveExpense"
+          class="saveButton"
+        >
+          SAVE EXPENSE
+        </button>
+
+      </div>
+
+      <p id="expenseError"></p>
+
+    </section>
+
+
+    <!-- EXPENSE CARDS -->
+
+    <section id="expenseList"></section>
+
+  </main>
+
+
+  <!-- ================= STATS PLACEHOLDER ================= -->
+
+  <main id="statsPage" class="page">
+
+    <section class="comingSoon">
+
+      <div>📊</div>
+
+      <p class="eyebrow">ANALYTICS</p>
+
+      <h2>Stats</h2>
+
+      <p>
+        Your weekly spending graph and smart
+        money tips will be added in Part 3.
+      </p>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
