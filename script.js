@@ -1,9 +1,7 @@
 const PASSWORD = "7890";
 
 
-/* =========================
-   ELEMENTS
-========================= */
+/* ================= ELEMENTS ================= */
 
 const lockScreen =
   document.getElementById("lockScreen");
@@ -73,23 +71,50 @@ const dashboardExpensePreview =
     "dashboardExpensePreview"
   );
 
+const notesInput =
+  document.getElementById("notesInput");
 
-/* =========================
-   DATA
-========================= */
+const saveNotes =
+  document.getElementById("saveNotes");
+
+const notesStatus =
+  document.getElementById("notesStatus");
+
+const weeklyTotal =
+  document.getElementById("weeklyTotal");
+
+const weeklyCount =
+  document.getElementById("weeklyCount");
+
+const graphTotal =
+  document.getElementById("graphTotal");
+
+const barChart =
+  document.getElementById("barChart");
+
+const moneyTip =
+  document.getElementById("moneyTip");
+
+
+/* ================= DATA ================= */
 
 let salary =
-  Number(localStorage.getItem("financeSalary")) || 0;
+  Number(
+    localStorage.getItem(
+      "financeSalary"
+    )
+  ) || 0;
+
 
 let expenses =
   JSON.parse(
-    localStorage.getItem("financeExpenses")
+    localStorage.getItem(
+      "financeExpenses"
+    )
   ) || [];
 
 
-/* =========================
-   PASSWORD
-========================= */
+/* ================= PASSWORD ================= */
 
 function unlockApp() {
 
@@ -98,9 +123,11 @@ function unlockApp() {
 
   if (entered === PASSWORD) {
 
-    lockScreen.style.display = "none";
+    lockScreen.style.display =
+      "none";
 
-    app.style.display = "block";
+    app.style.display =
+      "block";
 
     passwordError.textContent = "";
 
@@ -119,10 +146,12 @@ function unlockApp() {
 
 }
 
+
 unlockButton.addEventListener(
   "click",
   unlockApp
 );
+
 
 passwordInput.addEventListener(
   "keydown",
@@ -138,16 +167,16 @@ passwordInput.addEventListener(
 );
 
 
-/* =========================
-   SALARY
-========================= */
+/* ================= SALARY ================= */
 
 salaryButton.addEventListener(
   "click",
   function() {
 
     const value =
-      prompt("Enter your monthly salary:");
+      prompt(
+        "Enter your monthly salary:"
+      );
 
     if (value === null) return;
 
@@ -180,9 +209,7 @@ salaryButton.addEventListener(
 );
 
 
-/* =========================
-   BALANCE
-========================= */
+/* ================= MONEY ================= */
 
 function getTotalExpenses() {
 
@@ -205,6 +232,16 @@ function getBalance() {
 }
 
 
+function formatMoney(amount) {
+
+  return "₹" +
+    Number(amount).toLocaleString(
+      "en-IN"
+    );
+
+}
+
+
 function updateBalance() {
 
   salaryAmount.textContent =
@@ -216,9 +253,7 @@ function updateBalance() {
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ================= NAVIGATION ================= */
 
 function openPage(page) {
 
@@ -258,6 +293,8 @@ function openPage(page) {
     statsPage.classList.add(
       "activePage"
     );
+
+    updateStats();
 
   }
 
@@ -303,17 +340,11 @@ navButtons.forEach(
 );
 
 
-/* =========================
-   ADD EXPENSE BUTTONS
-========================= */
+/* ================= EXPENSE FORM ================= */
 
 addExpenseButton.addEventListener(
   "click",
-  function() {
-
-    openExpenseForm();
-
-  }
+  openExpenseForm
 );
 
 
@@ -361,9 +392,7 @@ cancelExpense.addEventListener(
 );
 
 
-/* =========================
-   SAVE EXPENSE
-========================= */
+/* ================= SAVE EXPENSE ================= */
 
 saveExpense.addEventListener(
   "click",
@@ -373,7 +402,9 @@ saveExpense.addEventListener(
       expenseTitle.value.trim();
 
     const amount =
-      Number(expenseAmount.value);
+      Number(
+        expenseAmount.value
+      );
 
 
     if (title === "") {
@@ -407,13 +438,14 @@ saveExpense.addEventListener(
 
       amount: amount,
 
-      date: new Date()
-        .toLocaleDateString("en-IN")
+      date: new Date().toISOString()
 
     };
 
 
-    expenses.unshift(expense);
+    expenses.unshift(
+      expense
+    );
 
 
     localStorage.setItem(
@@ -430,9 +462,7 @@ saveExpense.addEventListener(
 );
 
 
-/* =========================
-   DISPLAY EXPENSES
-========================= */
+/* ================= EXPENSE DISPLAY ================= */
 
 function renderExpenses() {
 
@@ -490,7 +520,7 @@ function renderExpenses() {
           </h3>
 
           <p>
-            ${expense.date}
+            ${formatDate(expense.date)}
           </p>
 
         </div>
@@ -502,7 +532,6 @@ function renderExpenses() {
         <button
           class="deleteExpense"
           data-id="${expense.id}"
-          aria-label="Delete expense"
         >
           ×
         </button>
@@ -510,25 +539,25 @@ function renderExpenses() {
       `;
 
 
-      const deleteButton =
-        card.querySelector(
+      card
+        .querySelector(
           ".deleteExpense"
+        )
+        .addEventListener(
+          "click",
+          function() {
+
+            deleteExpense(
+              expense.id
+            );
+
+          }
         );
 
 
-      deleteButton.addEventListener(
-        "click",
-        function() {
-
-          deleteExpense(
-            expense.id
-          );
-
-        }
+      expenseList.appendChild(
+        card
       );
-
-
-      expenseList.appendChild(card);
 
     }
   );
@@ -536,13 +565,12 @@ function renderExpenses() {
 }
 
 
-/* =========================
-   DASHBOARD EXPENSE
-========================= */
+/* ================= DASHBOARD ================= */
 
 function renderDashboardExpenses() {
 
-  dashboardExpensePreview.innerHTML = "";
+  dashboardExpensePreview.innerHTML =
+    "";
 
 
   if (expenses.length === 0) {
@@ -572,11 +600,7 @@ function renderDashboardExpenses() {
   }
 
 
-  const latest =
-    expenses.slice(0, 3);
-
-
-  latest.forEach(
+  expenses.slice(0,3).forEach(
     function(expense) {
 
       const card =
@@ -599,7 +623,7 @@ function renderDashboardExpenses() {
           </h3>
 
           <p>
-            ${expense.date}
+            ${formatDate(expense.date)}
           </p>
 
         </div>
@@ -620,9 +644,7 @@ function renderDashboardExpenses() {
 }
 
 
-/* =========================
-   DELETE
-========================= */
+/* ================= DELETE ================= */
 
 function deleteExpense(id) {
 
@@ -647,39 +669,408 @@ function deleteExpense(id) {
 }
 
 
-/* =========================
-   FORMAT MONEY
-========================= */
+/* ================= DATE ================= */
 
-function formatMoney(amount) {
+function formatDate(dateString) {
 
-  return "₹" +
-    Number(amount).toLocaleString(
-      "en-IN"
-    );
+  const date =
+    new Date(dateString);
+
+  return date.toLocaleDateString(
+    "en-IN",
+    {
+      day: "numeric",
+      month: "short",
+      year: "numeric"
+    }
+  );
 
 }
 
 
-/* =========================
-   SAFETY
-========================= */
+/* ================= WEEK ================= */
+
+function getLastSevenDays() {
+
+  const days = [];
+
+  const today =
+    new Date();
+
+  today.setHours(
+    0,0,0,0
+  );
+
+
+  for (
+    let i = 6;
+    i >= 0;
+    i--
+  ) {
+
+    const date =
+      new Date(today);
+
+    date.setDate(
+      today.getDate() - i
+    );
+
+    days.push(date);
+
+  }
+
+
+  return days;
+
+}
+
+
+function sameDay(a,b) {
+
+  return (
+    a.getFullYear() ===
+      b.getFullYear() &&
+
+    a.getMonth() ===
+      b.getMonth() &&
+
+    a.getDate() ===
+      b.getDate()
+  );
+
+}
+
+
+function getWeeklyData() {
+
+  const days =
+    getLastSevenDays();
+
+
+  return days.map(
+    function(day) {
+
+      const total =
+        expenses.reduce(
+          function(sum, expense) {
+
+            const expenseDate =
+              new Date(
+                expense.date
+              );
+
+            if (
+              sameDay(
+                expenseDate,
+                day
+              )
+            ) {
+
+              return sum +
+                expense.amount;
+
+            }
+
+            return sum;
+
+          },
+          0
+        );
+
+
+      return {
+        date: day,
+        total: total
+      };
+
+    }
+  );
+
+}
+
+
+/* ================= STATS ================= */
+
+function updateStats() {
+
+  const data =
+    getWeeklyData();
+
+
+  const total =
+    data.reduce(
+      function(sum, day) {
+
+        return sum + day.total;
+
+      },
+      0
+    );
+
+
+  const count =
+    data.reduce(
+      function(sum, day) {
+
+        const dayCount =
+          expenses.filter(
+            function(expense) {
+
+              return sameDay(
+                new Date(expense.date),
+                day.date
+              );
+
+            }
+          ).length;
+
+        return sum + dayCount;
+
+      },
+      0
+    );
+
+
+  weeklyTotal.textContent =
+    formatMoney(total);
+
+  weeklyCount.textContent =
+    count;
+
+  graphTotal.textContent =
+    formatMoney(total);
+
+
+  renderChart(data);
+
+  generateTip(total);
+
+}
+
+
+/* ================= GRAPH ================= */
+
+function renderChart(data) {
+
+  barChart.innerHTML =
+    "";
+
+
+  const max =
+    Math.max(
+      ...data.map(
+        function(day) {
+          return day.total;
+        }
+      ),
+      1
+    );
+
+
+  data.forEach(
+    function(day) {
+
+      const group =
+        document.createElement("div");
+
+      group.className =
+        "barGroup";
+
+
+      const value =
+        document.createElement("div");
+
+      value.className =
+        "barValue";
+
+      value.textContent =
+        day.total > 0
+          ? formatShortMoney(
+              day.total
+            )
+          : "";
+
+
+      const bar =
+        document.createElement("div");
+
+      bar.className =
+        "bar";
+
+
+      const height =
+        day.total === 0
+          ? 3
+          : Math.max(
+              8,
+              (day.total / max) * 190
+            );
+
+
+      bar.style.height =
+        height + "px";
+
+
+      const label =
+        document.createElement("div");
+
+      label.className =
+        "barLabel";
+
+      label.textContent =
+        day.date.toLocaleDateString(
+          "en-IN",
+          {
+            weekday: "short"
+          }
+        ).slice(0,3);
+
+
+      group.appendChild(value);
+
+      group.appendChild(bar);
+
+      group.appendChild(label);
+
+      barChart.appendChild(group);
+
+    }
+  );
+
+}
+
+
+function formatShortMoney(amount) {
+
+  if (amount >= 100000) {
+
+    return "₹" +
+      (amount / 100000)
+        .toFixed(1) +
+      "L";
+
+  }
+
+
+  if (amount >= 1000) {
+
+    return "₹" +
+      (amount / 1000)
+        .toFixed(1) +
+      "K";
+
+  }
+
+
+  return "₹" + amount;
+
+}
+
+
+/* ================= SMART TIP ================= */
+
+function generateTip(total) {
+
+  if (expenses.length === 0) {
+
+    moneyTip.textContent =
+      "Start adding expenses to receive smart spending tips.";
+
+    return;
+
+  }
+
+
+  if (salary <= 0) {
+
+    moneyTip.textContent =
+      "Add your monthly salary to understand your spending better.";
+
+    return;
+
+  }
+
+
+  const percentage =
+    (total / salary) * 100;
+
+
+  if (percentage >= 30) {
+
+    moneyTip.textContent =
+      "You have spent a significant part of your monthly salary this week. Try reducing unnecessary expenses.";
+
+  } else if (percentage >= 15) {
+
+    moneyTip.textContent =
+      "Your spending is moderate. Keep tracking your expenses and watch unnecessary purchases.";
+
+  } else {
+
+    moneyTip.textContent =
+      "Great control! Your spending this week is relatively low compared with your salary.";
+
+  }
+
+}
+
+
+/* ================= NOTES ================= */
+
+const savedNotes =
+  localStorage.getItem(
+    "financeNotes"
+  );
+
+if (savedNotes !== null) {
+
+  notesInput.value =
+    savedNotes;
+
+}
+
+
+saveNotes.addEventListener(
+  "click",
+  function() {
+
+    localStorage.setItem(
+      "financeNotes",
+      notesInput.value
+    );
+
+    notesStatus.textContent =
+      "✓ Notes saved";
+
+    setTimeout(
+      function() {
+
+        notesStatus.textContent =
+          "Saved automatically";
+
+      },
+      2000
+    );
+
+  }
+);
+
+
+/* ================= SECURITY ================= */
 
 function escapeHTML(text) {
 
   return text
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
 
 }
 
 
-/* =========================
-   UPDATE EVERYTHING
-========================= */
+/* ================= UPDATE ================= */
 
 function updateEverything() {
 
@@ -689,13 +1080,13 @@ function updateEverything() {
 
   renderDashboardExpenses();
 
+  updateStats();
+
 }
 
 
-/* =========================
-   START
-========================= */
+/* ================= START ================= */
 
 console.log(
-  "Finance Manager Part 2 loaded successfully."
+  "Finance Manager - Final Version Loaded"
 );
