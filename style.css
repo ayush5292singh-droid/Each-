@@ -1,0 +1,1095 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(94, 70, 190, 0.22),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(45, 92, 190, 0.18),
+      transparent 32%
+    ),
+    #070914;
+
+  color: #ffffff;
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   PASSWORD SCREEN
+========================================= */
+
+#lockScreen {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #27205a,
+      transparent 45%
+    ),
+    #070914;
+}
+
+
+.lockCard {
+
+  width: 430px;
+
+  max-width: 100%;
+
+  padding: 42px 34px;
+
+  text-align: center;
+
+  background: rgba(18, 22, 38, 0.95);
+
+  border: 1px solid #30364d;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 30px 100px rgba(0,0,0,.55),
+    0 0 60px rgba(104, 80, 255, .10);
+}
+
+
+.lockIcon {
+
+  width: 72px;
+
+  height: 72px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7968ff,
+      #4c9cff
+    );
+
+  font-size: 30px;
+
+  box-shadow:
+    0 12px 35px rgba(91, 88, 255, .3);
+}
+
+
+.eyebrow {
+
+  color: #929ab3;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+
+.lockCard h1 {
+
+  margin-top: 14px;
+
+  font-size: 48px;
+
+  line-height: .9;
+
+  letter-spacing: -3px;
+
+  text-align: left;
+}
+
+
+.lockCard h1 span {
+
+  display: block;
+
+  color: #8171ff;
+}
+
+
+.lockText {
+
+  margin: 24px 0;
+
+  color: #81899f;
+
+  font-size: 15px;
+}
+
+
+#passwordInput {
+
+  width: 100%;
+
+  height: 54px;
+
+  padding: 0 17px;
+
+  border: 1px solid #353c54;
+
+  border-radius: 15px;
+
+  outline: none;
+
+  background: #090c15;
+
+  color: white;
+
+  font-size: 16px;
+
+  text-align: center;
+
+  transition: .2s;
+}
+
+
+#passwordInput:focus {
+
+  border-color: #7968ff;
+
+  box-shadow:
+    0 0 0 3px rgba(121,104,255,.12);
+}
+
+
+#unlockButton {
+
+  width: 100%;
+
+  height: 54px;
+
+  margin-top: 12px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #7968ff,
+      #4d9cff
+    );
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+
+#unlockButton span {
+
+  margin-left: 8px;
+
+  font-size: 18px;
+}
+
+
+#unlockButton:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(91,88,255,.3);
+}
+
+
+#passwordError {
+
+  min-height: 18px;
+
+  margin-top: 10px;
+
+  color: #ff7182;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   MAIN APP
+========================================= */
+
+#app {
+
+  display: none;
+
+  width: 100%;
+
+  max-width: 1120px;
+
+  margin: auto;
+
+  padding: 38px 22px 80px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+  min-height: 270px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+.mainTitle {
+
+  margin-top: 12px;
+
+  font-size: clamp(52px, 7vw, 78px);
+
+  line-height: .86;
+
+  letter-spacing: -5px;
+}
+
+
+.mainTitle span {
+
+  display: block;
+
+  color: #8171ff;
+}
+
+
+.subtitle {
+
+  margin-top: 22px;
+
+  color: #858da5;
+
+  font-size: 18px;
+}
+
+
+/* =========================================
+   ROBOT
+========================================= */
+
+.robot {
+
+  position: relative;
+
+  width: 220px;
+
+  height: 230px;
+
+  flex-shrink: 0;
+
+  animation: robotFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes robotFloat {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+.antenna {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 108px;
+
+  width: 4px;
+
+  height: 32px;
+
+  background: #7e70ff;
+}
+
+
+.antenna::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: -8px;
+
+  left: -3px;
+
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #62c5ff;
+
+  box-shadow:
+    0 0 16px #62c5ff;
+}
+
+
+.robotHead {
+
+  position: absolute;
+
+  top: 30px;
+
+  left: 48px;
+
+  width: 125px;
+
+  height: 92px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #8979ff,
+      #5546c9
+    );
+
+  box-shadow:
+    0 18px 45px rgba(78,66,201,.35);
+}
+
+
+.robotEye {
+
+  position: absolute;
+
+  top: 30px;
+
+  width: 12px;
+
+  height: 16px;
+
+  border-radius: 50%;
+
+  background: #b6eaff;
+
+  box-shadow:
+    0 0 12px #66c7ff;
+}
+
+
+.leftEye {
+  left: 34px;
+}
+
+
+.rightEye {
+  right: 34px;
+}
+
+
+.robotMouth {
+
+  position: absolute;
+
+  left: 47px;
+
+  top: 63px;
+
+  width: 32px;
+
+  height: 6px;
+
+  border-radius: 10px;
+
+  background: #aaa1ff;
+}
+
+
+.robotBody {
+
+  position: absolute;
+
+  top: 125px;
+
+  left: 68px;
+
+  width: 86px;
+
+  height: 76px;
+
+  border: 1px solid #3b435d;
+
+  border-radius: 24px;
+
+  background: #131827;
+
+  text-align: center;
+
+  padding-top: 12px;
+}
+
+
+.robotRupee {
+
+  width: 47px;
+
+  height: 38px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #080c15;
+
+  color: #62bfff;
+
+  font-size: 23px;
+}
+
+
+.robotLight {
+
+  width: 8px;
+
+  height: 8px;
+
+  margin: 9px auto 0;
+
+  border-radius: 50%;
+
+  background: #8272ff;
+
+  box-shadow:
+    0 0 12px #8272ff;
+}
+
+
+.robotArm {
+
+  position: absolute;
+
+  top: 132px;
+
+  width: 16px;
+
+  height: 57px;
+
+  border-radius: 20px;
+
+  background: #5e64b9;
+}
+
+
+.leftArm {
+
+  left: 42px;
+
+  transform: rotate(24deg);
+}
+
+
+.rightArm {
+
+  right: 42px;
+
+  transform: rotate(-24deg);
+}
+
+
+/* =========================================
+   BALANCE CARD
+========================================= */
+
+.balanceCard {
+
+  position: relative;
+
+  min-height: 270px;
+
+  padding: 31px 34px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      115deg,
+      #6252ec 0%,
+      #7968ff 48%,
+      #4d9cff 100%
+    );
+
+  box-shadow:
+    0 25px 70px rgba(72,65,207,.25);
+
+  overflow: hidden;
+}
+
+
+.balanceCard::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+
+  height: 300px;
+
+  right: -130px;
+
+  bottom: -190px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.08);
+}
+
+
+.balanceHeader {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+}
+
+
+.whiteEyebrow {
+
+  color: #ffffffb5;
+}
+
+
+.available {
+
+  margin-top: 9px;
+
+  color: #ffffffa8;
+
+  font-size: 14px;
+}
+
+
+.available span {
+
+  display: inline-block;
+
+  width: 10px;
+
+  height: 10px;
+
+  margin-right: 6px;
+
+  border-radius: 50%;
+
+  background: #d5dcff;
+}
+
+
+.balanceIcon {
+
+  width: 52px;
+
+  height: 52px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,.15);
+
+  font-size: 26px;
+}
+
+
+#balanceAmount {
+
+  margin-top: 30px;
+
+  font-size: clamp(48px, 7vw, 64px);
+
+  letter-spacing: -3px;
+}
+
+
+.balanceDescription {
+
+  margin-top: 9px;
+
+  color: #ffffffa8;
+
+  font-size: 15px;
+}
+
+
+.cardArrow {
+
+  position: absolute;
+
+  right: 35px;
+
+  bottom: 30px;
+
+  color: #ffffffaa;
+
+  font-size: 20px;
+}
+
+
+/* =========================================
+   SALARY CARD
+========================================= */
+
+.salaryCard {
+
+  margin-top: 17px;
+
+  padding: 21px 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  border: 1px solid #2d3449;
+
+  border-radius: 25px;
+
+  background: #121624;
+}
+
+
+.salaryIcon {
+
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 18px;
+
+  background: #211f40;
+
+  font-size: 27px;
+}
+
+
+.salaryDetails {
+
+  flex: 1;
+}
+
+
+.salaryDetails h2 {
+
+  margin-top: 7px;
+
+  font-size: 29px;
+}
+
+
+#salaryButton {
+
+  padding: 14px 20px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #292f46;
+
+  color: #aaa0ff;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin: 28px 0 30px;
+}
+
+
+.navButton {
+
+  padding: 12px 18px;
+
+  border: 1px solid #30374c;
+
+  border-radius: 13px;
+
+  background: #121624;
+
+  color: #9da5bb;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+.navButton.active {
+
+  background:
+    linear-gradient(
+      100deg,
+      #7968ff,
+      #4d9cff
+    );
+
+  border-color: transparent;
+
+  color: white;
+}
+
+
+/* =========================================
+   TRACKER
+========================================= */
+
+.trackerPreview {
+
+  margin-top: 10px;
+}
+
+
+.trackerHeading {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 7px;
+}
+
+
+.trackerHeading h2 {
+
+  font-size: 35px;
+}
+
+
+.addExpensePreview {
+
+  padding: 13px 17px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #7968ff,
+      #4d9cff
+    );
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+
+.emptyExpense {
+
+  margin-top: 17px;
+
+  padding: 48px 20px;
+
+  text-align: center;
+
+  border: 1px dashed #30374c;
+
+  border-radius: 25px;
+
+  background: rgba(18,22,36,.55);
+}
+
+
+.emptyIcon {
+
+  font-size: 38px;
+
+  margin-bottom: 10px;
+}
+
+
+.emptyExpense h3 {
+
+  font-size: 20px;
+}
+
+
+.emptyExpense p {
+
+  margin-top: 7px;
+
+  color: #747d96;
+}
+
+
+/* =========================================
+   NOTES
+========================================= */
+
+.notesPreview {
+
+  margin-top: 22px;
+
+  padding: 24px;
+
+  border: 1px solid #292f43;
+
+  border-radius: 23px;
+
+  background: #121624;
+}
+
+
+.notesPreview h2 {
+
+  margin-top: 7px;
+
+  font-size: 26px;
+}
+
+
+.notesPlaceholder {
+
+  margin-top: 15px;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background: #090c15;
+
+  color: #6f7891;
+}
+
+
+/* =========================================
+   MOBILE / IPAD
+========================================= */
+
+@media (max-width: 750px) {
+
+  #app {
+
+    padding: 25px 15px 60px;
+  }
+
+
+  .hero {
+
+    min-height: 210px;
+  }
+
+
+  .mainTitle {
+
+    font-size: 48px;
+
+    letter-spacing: -4px;
+  }
+
+
+  .robot {
+
+    transform: scale(.72);
+
+    transform-origin: right center;
+
+    margin-right: -25px;
+  }
+
+
+  .balanceCard {
+
+    padding: 27px;
+  }
+
+
+  .salaryCard {
+
+    padding: 18px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .hero {
+
+    min-height: 190px;
+  }
+
+
+  .robot {
+
+    display: none;
+  }
+
+
+  .mainTitle {
+
+    font-size: 43px;
+  }
+
+
+  .balanceCard {
+
+    min-height: 240px;
+
+    padding: 25px;
+  }
+
+
+  #balanceAmount {
+
+    font-size: 45px;
+  }
+
+
+  .salaryIcon {
+
+    width: 48px;
+
+    height: 48px;
+  }
+
+
+  .salaryDetails h2 {
+
+    font-size: 23px;
+  }
+
+
+  #salaryButton {
+
+    padding: 12px 14px;
+  }
+
+
+  .navigation {
+
+    overflow-x: auto;
+
+    padding-bottom: 3px;
+  }
+
+
+  .navButton {
+
+    white-space: nowrap;
+  }
+
+
+  .trackerHeading {
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    flex-direction: column;
+  }
+
+
+  .addExpensePreview {
+
+    width: 100%;
+  }
+
+}
