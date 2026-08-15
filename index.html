@@ -11,6 +11,7 @@
 
 <!-- LOCK SCREEN -->
 <div id="lockScreen">
+
   <div class="lockCard">
 
     <div class="lockIcon">🔐</div>
@@ -40,6 +41,7 @@
     <p id="passwordError"></p>
 
   </div>
+
 </div>
 
 
@@ -64,16 +66,18 @@
 
     </div>
 
-
     <!-- ROBOT -->
     <div class="robot">
 
       <div class="antenna"></div>
 
       <div class="robotHead">
+
         <div class="robotEye leftEye"></div>
         <div class="robotEye rightEye"></div>
+
         <div class="robotMouth"></div>
+
       </div>
 
       <div class="robotBody">
@@ -110,7 +114,9 @@
 
       </div>
 
-      <div class="balanceIcon">₹</div>
+      <div class="balanceIcon">
+        ₹
+      </div>
 
     </div>
 
@@ -128,7 +134,9 @@
   <!-- SALARY -->
   <section class="salaryCard">
 
-    <div class="salaryIcon">💼</div>
+    <div class="salaryIcon">
+      💼
+    </div>
 
     <div class="salaryDetails">
 
@@ -140,7 +148,9 @@
 
     </div>
 
-    <button id="salaryButton">+ ADD</button>
+    <button id="salaryButton">
+      + ADD
+    </button>
 
   </section>
 
@@ -148,15 +158,24 @@
   <!-- NAVIGATION -->
   <nav class="navigation">
 
-    <button class="navButton active" data-page="dashboard">
+    <button
+      class="navButton active"
+      data-page="dashboard"
+    >
       🏠 Dashboard
     </button>
 
-    <button class="navButton" data-page="expenses">
+    <button
+      class="navButton"
+      data-page="expenses"
+    >
       💸 Expenses
     </button>
 
-    <button class="navButton" data-page="stats">
+    <button
+      class="navButton"
+      data-page="stats"
+    >
       📊 Stats
     </button>
 
@@ -169,7 +188,9 @@
 
     <section class="trackerPreview">
 
-      <p class="eyebrow">MONEY TRACKER</p>
+      <p class="eyebrow">
+        MONEY TRACKER
+      </p>
 
       <div class="trackerHeading">
 
@@ -189,14 +210,33 @@
     </section>
 
 
-    <section class="notesPreview">
+    <!-- NOTES -->
 
-      <p class="eyebrow">QUICK NOTES</p>
+    <section class="notesSection">
 
-      <h2>Your notes</h2>
+      <p class="eyebrow">
+        QUICK NOTES
+      </p>
 
-      <div class="notesPlaceholder">
-        Notes will be available in Part 3.
+      <h2>
+        Money notes
+      </h2>
+
+      <textarea
+        id="notesInput"
+        placeholder="Write something about your money..."
+      ></textarea>
+
+      <div class="notesBottom">
+
+        <span id="notesStatus">
+          Saved automatically
+        </span>
+
+        <button id="saveNotes">
+          SAVE NOTES
+        </button>
+
       </div>
 
     </section>
@@ -212,9 +252,13 @@
 
       <div>
 
-        <p class="eyebrow">MONEY TRACKER</p>
+        <p class="eyebrow">
+          MONEY TRACKER
+        </p>
 
-        <h2>Expenses</h2>
+        <h2>
+          Expenses
+        </h2>
 
         <p class="pageDescription">
           Track where your money goes.
@@ -233,16 +277,20 @@
     </section>
 
 
-    <!-- EXPENSE FORM -->
+    <!-- FORM -->
 
     <section
       id="expenseForm"
       class="expenseForm"
     >
 
-      <p class="eyebrow">NEW TRANSACTION</p>
+      <p class="eyebrow">
+        NEW TRANSACTION
+      </p>
 
-      <h3>Add an expense</h3>
+      <h3>
+        Add an expense
+      </h3>
 
       <input
         id="expenseTitle"
@@ -281,29 +329,147 @@
     </section>
 
 
-    <!-- EXPENSE CARDS -->
-
     <section id="expenseList"></section>
 
   </main>
 
 
-  <!-- ================= STATS PLACEHOLDER ================= -->
+  <!-- ================= STATS ================= -->
 
   <main id="statsPage" class="page">
 
-    <section class="comingSoon">
+    <section class="statsHeader">
 
-      <div>📊</div>
+      <p class="eyebrow">
+        ANALYTICS
+      </p>
 
-      <p class="eyebrow">ANALYTICS</p>
-
-      <h2>Stats</h2>
+      <h2>
+        Weekly Stats
+      </h2>
 
       <p>
-        Your weekly spending graph and smart
-        money tips will be added in Part 3.
+        See how your money is being spent.
       </p>
+
+    </section>
+
+
+    <!-- STAT CARDS -->
+
+    <section class="statCards">
+
+      <div class="statCard">
+
+        <div class="statIcon">
+          💸
+        </div>
+
+        <div>
+
+          <p>
+            THIS WEEK
+          </p>
+
+          <h3 id="weeklyTotal">
+            ₹0
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="statCard">
+
+        <div class="statIcon">
+          🧾
+        </div>
+
+        <div>
+
+          <p>
+            EXPENSES
+          </p>
+
+          <h3 id="weeklyCount">
+            0
+          </h3>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GRAPH -->
+
+    <section class="graphCard">
+
+      <div class="graphTitle">
+
+        <div>
+
+          <p class="eyebrow">
+            SPENDING
+          </p>
+
+          <h3>
+            Last 7 Days
+          </h3>
+
+        </div>
+
+        <div id="graphTotal">
+          ₹0
+        </div>
+
+      </div>
+
+
+      <div class="chart">
+
+        <div class="chartGrid">
+
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+
+        <div
+          id="barChart"
+          class="barChart"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TIPS -->
+
+    <section class="tipsCard">
+
+      <div class="tipsIcon">
+        💡
+      </div>
+
+      <div>
+
+        <p class="eyebrow">
+          SMART TIP
+        </p>
+
+        <h3 id="moneyTip">
+          Start adding expenses to receive
+          personalized tips.
+        </h3>
+
+      </div>
 
     </section>
 
