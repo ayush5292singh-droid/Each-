@@ -10,20 +10,21 @@ html {
 
 body {
   min-height: 100vh;
+
   background:
     radial-gradient(
       circle at 15% 10%,
-      rgba(94, 70, 190, 0.22),
+      rgba(94, 70, 190, .22),
       transparent 30%
     ),
     radial-gradient(
       circle at 90% 90%,
-      rgba(45, 92, 190, 0.18),
+      rgba(45, 92, 190, .18),
       transparent 32%
     ),
     #070914;
 
-  color: #ffffff;
+  color: white;
 
   font-family:
     -apple-system,
@@ -36,22 +37,15 @@ body {
 }
 
 
-/* =========================================
-   PASSWORD SCREEN
-========================================= */
+/* LOCK */
 
 #lockScreen {
-
   position: fixed;
-
   inset: 0;
-
   z-index: 9999;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
   padding: 20px;
@@ -65,41 +59,32 @@ body {
     #070914;
 }
 
-
 .lockCard {
-
   width: 430px;
-
   max-width: 100%;
 
   padding: 42px 34px;
 
   text-align: center;
 
-  background: rgba(18, 22, 38, 0.95);
+  background: rgba(18,22,38,.95);
 
   border: 1px solid #30364d;
 
   border-radius: 30px;
 
   box-shadow:
-    0 30px 100px rgba(0,0,0,.55),
-    0 0 60px rgba(104, 80, 255, .10);
+    0 30px 100px rgba(0,0,0,.55);
 }
 
-
 .lockIcon {
-
   width: 72px;
-
   height: 72px;
 
   margin: 0 auto 22px;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
   border-radius: 22px;
@@ -112,30 +97,19 @@ body {
     );
 
   font-size: 30px;
-
-  box-shadow:
-    0 12px 35px rgba(91, 88, 255, .3);
 }
 
-
 .eyebrow {
-
   color: #929ab3;
-
   font-size: 11px;
-
   font-weight: 800;
-
   letter-spacing: 3px;
 }
 
-
 .lockCard h1 {
-
   margin-top: 14px;
 
   font-size: 48px;
-
   line-height: .9;
 
   letter-spacing: -3px;
@@ -143,70 +117,42 @@ body {
   text-align: left;
 }
 
-
 .lockCard h1 span {
-
   display: block;
-
   color: #8171ff;
 }
 
-
 .lockText {
-
   margin: 24px 0;
-
   color: #81899f;
-
-  font-size: 15px;
 }
 
-
 #passwordInput {
-
   width: 100%;
-
   height: 54px;
 
   padding: 0 17px;
 
   border: 1px solid #353c54;
-
   border-radius: 15px;
 
   outline: none;
 
   background: #090c15;
-
   color: white;
 
   font-size: 16px;
 
   text-align: center;
-
-  transition: .2s;
 }
-
-
-#passwordInput:focus {
-
-  border-color: #7968ff;
-
-  box-shadow:
-    0 0 0 3px rgba(121,104,255,.12);
-}
-
 
 #unlockButton {
-
   width: 100%;
-
   height: 54px;
 
   margin-top: 12px;
 
   border: none;
-
   border-radius: 15px;
 
   background:
@@ -218,39 +164,14 @@ body {
 
   color: white;
 
-  font-size: 14px;
-
   font-weight: 800;
 
-  letter-spacing: 1px;
-
   cursor: pointer;
-
-  transition: .2s;
 }
 
-
-#unlockButton span {
-
-  margin-left: 8px;
-
-  font-size: 18px;
-}
-
-
-#unlockButton:hover {
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 12px 30px rgba(91,88,255,.3);
-}
-
-
-#passwordError {
-
+#passwordError,
+#expenseError {
   min-height: 18px;
-
   margin-top: 10px;
 
   color: #ff7182;
@@ -259,16 +180,12 @@ body {
 }
 
 
-/* =========================================
-   MAIN APP
-========================================= */
+/* APP */
 
 #app {
-
   display: none;
 
   width: 100%;
-
   max-width: 1120px;
 
   margin: auto;
@@ -277,69 +194,50 @@ body {
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* HERO */
 
 .hero {
-
   min-height: 270px;
 
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
 }
 
-
 .mainTitle {
-
   margin-top: 12px;
 
-  font-size: clamp(52px, 7vw, 78px);
+  font-size: clamp(52px,7vw,78px);
 
   line-height: .86;
 
   letter-spacing: -5px;
 }
 
-
 .mainTitle span {
-
   display: block;
-
   color: #8171ff;
 }
 
-
 .subtitle {
-
   margin-top: 22px;
-
   color: #858da5;
-
   font-size: 18px;
 }
 
 
-/* =========================================
-   ROBOT
-========================================= */
+/* ROBOT */
 
 .robot {
-
   position: relative;
 
   width: 220px;
-
   height: 230px;
 
   flex-shrink: 0;
 
   animation: robotFloat 4s ease-in-out infinite;
 }
-
 
 @keyframes robotFloat {
 
@@ -350,37 +248,30 @@ body {
   50% {
     transform: translateY(-8px);
   }
+
 }
 
-
 .antenna {
-
   position: absolute;
 
   top: 0;
-
   left: 108px;
 
   width: 4px;
-
   height: 32px;
 
   background: #7e70ff;
 }
 
-
 .antenna::before {
-
   content: "";
 
   position: absolute;
 
   top: -8px;
-
   left: -3px;
 
   width: 10px;
-
   height: 10px;
 
   border-radius: 50%;
@@ -391,17 +282,13 @@ body {
     0 0 16px #62c5ff;
 }
 
-
 .robotHead {
-
   position: absolute;
 
   top: 30px;
-
   left: 48px;
 
   width: 125px;
-
   height: 92px;
 
   border-radius: 30px;
@@ -412,20 +299,14 @@ body {
       #8979ff,
       #5546c9
     );
-
-  box-shadow:
-    0 18px 45px rgba(78,66,201,.35);
 }
 
-
 .robotEye {
-
   position: absolute;
 
   top: 30px;
 
   width: 12px;
-
   height: 16px;
 
   border-radius: 50%;
@@ -436,27 +317,21 @@ body {
     0 0 12px #66c7ff;
 }
 
-
 .leftEye {
   left: 34px;
 }
-
 
 .rightEye {
   right: 34px;
 }
 
-
 .robotMouth {
-
   position: absolute;
 
   left: 47px;
-
   top: 63px;
 
   width: 32px;
-
   height: 6px;
 
   border-radius: 10px;
@@ -464,17 +339,13 @@ body {
   background: #aaa1ff;
 }
 
-
 .robotBody {
-
   position: absolute;
 
   top: 125px;
-
   left: 68px;
 
   width: 86px;
-
   height: 76px;
 
   border: 1px solid #3b435d;
@@ -488,20 +359,15 @@ body {
   padding-top: 12px;
 }
 
-
 .robotRupee {
-
   width: 47px;
-
   height: 38px;
 
   margin: auto;
 
   display: flex;
-
-  align-items: center;
-
   justify-content: center;
+  align-items: center;
 
   border-radius: 12px;
 
@@ -512,11 +378,8 @@ body {
   font-size: 23px;
 }
 
-
 .robotLight {
-
   width: 8px;
-
   height: 8px;
 
   margin: 9px auto 0;
@@ -529,15 +392,12 @@ body {
     0 0 12px #8272ff;
 }
 
-
 .robotArm {
-
   position: absolute;
 
   top: 132px;
 
   width: 16px;
-
   height: 57px;
 
   border-radius: 20px;
@@ -545,29 +405,20 @@ body {
   background: #5e64b9;
 }
 
-
 .leftArm {
-
   left: 42px;
-
   transform: rotate(24deg);
 }
 
-
 .rightArm {
-
   right: 42px;
-
   transform: rotate(-24deg);
 }
 
 
-/* =========================================
-   BALANCE CARD
-========================================= */
+/* BALANCE */
 
 .balanceCard {
-
   position: relative;
 
   min-height: 270px;
@@ -579,70 +430,33 @@ body {
   background:
     linear-gradient(
       115deg,
-      #6252ec 0%,
-      #7968ff 48%,
-      #4d9cff 100%
+      #6252ec,
+      #7968ff,
+      #4d9cff
     );
 
   box-shadow:
     0 25px 70px rgba(72,65,207,.25);
-
-  overflow: hidden;
 }
-
-
-.balanceCard::after {
-
-  content: "";
-
-  position: absolute;
-
-  width: 300px;
-
-  height: 300px;
-
-  right: -130px;
-
-  bottom: -190px;
-
-  border-radius: 50%;
-
-  background: rgba(255,255,255,.08);
-}
-
 
 .balanceHeader {
-
   display: flex;
-
   justify-content: space-between;
-
-  align-items: flex-start;
 }
 
-
 .whiteEyebrow {
-
   color: #ffffffb5;
 }
 
-
 .available {
-
   margin-top: 9px;
-
   color: #ffffffa8;
-
-  font-size: 14px;
 }
 
-
 .available span {
-
   display: inline-block;
 
   width: 10px;
-
   height: 10px;
 
   margin-right: 6px;
@@ -652,17 +466,12 @@ body {
   background: #d5dcff;
 }
 
-
 .balanceIcon {
-
   width: 52px;
-
   height: 52px;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
   border-radius: 16px;
@@ -672,33 +481,23 @@ body {
   font-size: 26px;
 }
 
-
 #balanceAmount {
-
   margin-top: 30px;
 
-  font-size: clamp(48px, 7vw, 64px);
+  font-size: clamp(48px,7vw,64px);
 
   letter-spacing: -3px;
 }
 
-
 .balanceDescription {
-
   margin-top: 9px;
-
   color: #ffffffa8;
-
-  font-size: 15px;
 }
 
-
 .cardArrow {
-
   position: absolute;
 
   right: 35px;
-
   bottom: 30px;
 
   color: #ffffffaa;
@@ -707,40 +506,30 @@ body {
 }
 
 
-/* =========================================
-   SALARY CARD
-========================================= */
+/* SALARY */
 
 .salaryCard {
-
   margin-top: 17px;
 
   padding: 21px 26px;
 
   display: flex;
-
   align-items: center;
 
   gap: 17px;
 
   border: 1px solid #2d3449;
-
   border-radius: 25px;
 
   background: #121624;
 }
 
-
 .salaryIcon {
-
   width: 58px;
-
   height: 58px;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 
   border-radius: 18px;
@@ -750,27 +539,19 @@ body {
   font-size: 27px;
 }
 
-
 .salaryDetails {
-
   flex: 1;
 }
 
-
 .salaryDetails h2 {
-
   margin-top: 7px;
-
   font-size: 29px;
 }
 
-
 #salaryButton {
-
   padding: 14px 20px;
 
   border: none;
-
   border-radius: 14px;
 
   background: #292f46;
@@ -783,40 +564,29 @@ body {
 }
 
 
-/* =========================================
-   NAVIGATION
-========================================= */
+/* NAVIGATION */
 
 .navigation {
-
   display: flex;
-
   gap: 10px;
 
   margin: 28px 0 30px;
 }
 
-
 .navButton {
-
   padding: 12px 18px;
 
   border: 1px solid #30374c;
-
   border-radius: 13px;
 
   background: #121624;
 
   color: #9da5bb;
 
-  font-size: 14px;
-
   cursor: pointer;
 }
 
-
 .navButton.active {
-
   background:
     linear-gradient(
       100deg,
@@ -824,46 +594,44 @@ body {
       #4d9cff
     );
 
-  border-color: transparent;
-
   color: white;
 }
 
 
-/* =========================================
-   TRACKER
-========================================= */
+/* PAGES */
 
-.trackerPreview {
+.page {
+  display: none;
+}
 
-  margin-top: 10px;
+.activePage {
+  display: block;
 }
 
 
-.trackerHeading {
+/* DASHBOARD */
 
+.trackerPreview {
+  margin-top: 10px;
+}
+
+.trackerHeading {
   display: flex;
 
   justify-content: space-between;
-
   align-items: center;
 
   margin-top: 7px;
 }
 
-
 .trackerHeading h2 {
-
   font-size: 35px;
 }
 
-
 .addExpensePreview {
-
   padding: 13px 17px;
 
   border: none;
-
   border-radius: 13px;
 
   background:
@@ -881,8 +649,236 @@ body {
 }
 
 
-.emptyExpense {
+/* EXPENSE PAGE */
 
+.expensePageHeader {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 20px;
+}
+
+.expensePageHeader h2 {
+  margin-top: 8px;
+
+  font-size: 38px;
+}
+
+.pageDescription {
+  margin-top: 8px;
+
+  color: #858da5;
+}
+
+.addExpenseButton {
+  padding: 15px 20px;
+
+  border: none;
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #7968ff,
+      #4d9cff
+    );
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.addExpenseButton span {
+  font-size: 20px;
+}
+
+
+/* FORM */
+
+.expenseForm {
+  display: none;
+
+  margin-top: 20px;
+
+  padding: 24px;
+
+  border: 1px solid #30374c;
+  border-radius: 23px;
+
+  background: #121624;
+}
+
+.expenseForm h3 {
+  margin-top: 8px;
+  margin-bottom: 18px;
+
+  font-size: 24px;
+}
+
+.expenseForm input {
+  width: 100%;
+  height: 52px;
+
+  margin-bottom: 11px;
+
+  padding: 0 15px;
+
+  border: 1px solid #30374c;
+  border-radius: 14px;
+
+  outline: none;
+
+  background: #090c15;
+
+  color: white;
+
+  font-size: 15px;
+}
+
+.expenseForm input:focus {
+  border-color: #7968ff;
+}
+
+.formButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.formButtons button {
+  flex: 1;
+
+  height: 50px;
+
+  border: none;
+  border-radius: 13px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.cancelButton {
+  background: #292f43;
+  color: #aab0c1;
+}
+
+.saveButton {
+  background:
+    linear-gradient(
+      100deg,
+      #7968ff,
+      #4d9cff
+    );
+
+  color: white;
+}
+
+
+/* EXPENSE CARDS */
+
+#expenseList {
+  margin-top: 18px;
+}
+
+.expenseCard {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 12px;
+
+  padding: 18px;
+
+  border: 1px solid #292f42;
+
+  border-radius: 21px;
+
+  background: #121624;
+
+  transition: .2s;
+}
+
+.expenseCard:hover {
+  transform: translateY(-2px);
+
+  border-color: #464e6b;
+}
+
+.expenseIcon {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 16px;
+
+  background: #23213f;
+
+  font-size: 23px;
+}
+
+.expenseInfo {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.expenseInfo h3 {
+  font-size: 17px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.expenseInfo p {
+  margin-top: 5px;
+
+  color: #747c94;
+
+  font-size: 11px;
+}
+
+.expenseMoney {
+  color: #ff7182;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.deleteExpense {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #292033;
+
+  color: #ff7182;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+/* EMPTY */
+
+.emptyExpense {
   margin-top: 17px;
 
   padding: 48px 20px;
@@ -896,35 +892,48 @@ body {
   background: rgba(18,22,36,.55);
 }
 
-
 .emptyIcon {
-
   font-size: 38px;
-
   margin-bottom: 10px;
 }
 
-
-.emptyExpense h3 {
-
-  font-size: 20px;
-}
-
-
 .emptyExpense p {
-
   margin-top: 7px;
-
   color: #747d96;
 }
 
 
-/* =========================================
-   NOTES
-========================================= */
+/* DASHBOARD PREVIEW */
+
+.dashboardExpenseCard {
+  margin-top: 15px;
+
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  border: 1px solid #292f42;
+  border-radius: 20px;
+
+  background: #121624;
+}
+
+.dashboardExpenseCard .expenseInfo {
+  flex: 1;
+}
+
+.dashboardExpenseCard .expenseMoney {
+  color: #ff7182;
+  font-weight: 800;
+}
+
+
+/* NOTES */
 
 .notesPreview {
-
   margin-top: 22px;
 
   padding: 24px;
@@ -936,17 +945,12 @@ body {
   background: #121624;
 }
 
-
 .notesPreview h2 {
-
   margin-top: 7px;
-
   font-size: 26px;
 }
 
-
 .notesPlaceholder {
-
   margin-top: 15px;
 
   padding: 18px;
@@ -959,34 +963,61 @@ body {
 }
 
 
-/* =========================================
-   MOBILE / IPAD
-========================================= */
+/* STATS */
 
-@media (max-width: 750px) {
+.comingSoon {
+  padding: 70px 25px;
+
+  text-align: center;
+
+  border: 1px dashed #30374c;
+
+  border-radius: 25px;
+
+  background: #121624;
+}
+
+.comingSoon > div {
+  font-size: 55px;
+
+  margin-bottom: 15px;
+}
+
+.comingSoon h2 {
+  margin-top: 8px;
+
+  font-size: 38px;
+}
+
+.comingSoon p:last-child {
+  max-width: 500px;
+
+  margin: 12px auto 0;
+
+  color: #858da5;
+
+  line-height: 1.6;
+}
+
+
+/* MOBILE */
+
+@media (max-width:750px) {
 
   #app {
-
     padding: 25px 15px 60px;
   }
 
-
   .hero {
-
     min-height: 210px;
   }
 
-
   .mainTitle {
-
     font-size: 48px;
-
     letter-spacing: -4px;
   }
 
-
   .robot {
-
     transform: scale(.72);
 
     transform-origin: right center;
@@ -994,102 +1025,72 @@ body {
     margin-right: -25px;
   }
 
+  .expensePageHeader {
+    align-items: flex-start;
 
-  .balanceCard {
-
-    padding: 27px;
+    flex-direction: column;
   }
 
-
-  .salaryCard {
-
-    padding: 18px;
+  .addExpenseButton {
+    width: 100%;
   }
 
 }
 
 
-@media (max-width: 520px) {
-
-  .hero {
-
-    min-height: 190px;
-  }
-
+@media (max-width:520px) {
 
   .robot {
-
     display: none;
   }
 
-
   .mainTitle {
-
     font-size: 43px;
   }
 
-
   .balanceCard {
-
-    min-height: 240px;
-
     padding: 25px;
   }
 
-
   #balanceAmount {
-
     font-size: 45px;
   }
 
+  .salaryCard {
+    padding: 18px;
+  }
 
   .salaryIcon {
-
     width: 48px;
-
     height: 48px;
   }
 
-
   .salaryDetails h2 {
-
     font-size: 23px;
   }
 
-
   #salaryButton {
-
     padding: 12px 14px;
   }
 
-
   .navigation {
-
     overflow-x: auto;
-
-    padding-bottom: 3px;
   }
 
-
   .navButton {
-
     white-space: nowrap;
   }
 
-
-  .trackerHeading {
-
-    align-items: flex-start;
-
-    gap: 15px;
-
+  .formButtons {
     flex-direction: column;
   }
 
+  .expenseCard {
+    padding: 14px;
+  }
 
-  .addExpensePreview {
-
-    width: 100%;
+  .expenseMoney {
+    font-size: 14px;
   }
 
 }
